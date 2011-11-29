@@ -2,14 +2,14 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 
 CREATE TABLE `volumes` (
-  `id`     bigint(20) NOT NULL,
+  `id`     bigint(20) NOT NULL AUTO_INCREMENT,
   `path`   char(255)  character set utf8 NOT NULL,
   `status` bigint(20) NOT NULL,
   PRIMARY KEY  ( `id` )
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tasks` (
-  `id`        bigint(20) NOT NULL,
+  `id`        bigint(20) NOT NULL AUTO_INCREMENT,
   `parent_id` bigint(20) NOT NULL,
   `volume_id` bigint(20) NOT NULL,
   `seeds`     text NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `tasks` (
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `validations` (
-  `id`        bigint(20) NOT NULL,
+  `id`        bigint(20) NOT NULL AUTO_INCREMENT,
   `task_id`   bigint(20) NOT NULL,
   `user_id`   bigint(20) NOT NULL,
   `status`    bigint(20) NOT NULL,

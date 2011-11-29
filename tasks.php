@@ -38,4 +38,10 @@ class tasks
                               serialize($entry), $status);
 
     }
+
+    public static function update_task_status( $id, $status )
+    {
+        return mysql::execf('UPDATE tasks SET status = %d WHERE id = %d',
+                            $status, $id);
+    }
 }
